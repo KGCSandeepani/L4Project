@@ -1,0 +1,26 @@
+Project,Lines of Code,Cyclomatic Complexity,Weight Methods per Class,Depth of Inheritance Tree,Number of Children,Coupling between Objects,Response for Class,Lack of Cohesion of Methods
+p1,344,3,41,3,14,3,15,1
+p2,545,2,80,3,9,4,14,1
+p3,560,8,19,2,3,4,16,2
+p4,470,7,12,2,3,2,15,2
+p5,877,4,28,5,2,5,32,3
+p6,800,12,26,2,2,1,20,2
+p7,754,3,12,2,1,2,15,2
+p8,1200,4,28,5,2,5,36,3
+p9,483,2,45,6,12,4,67,4
+p10,960,8,43,6,9,6,32,3
+Android-Universal-Image-Loader,6835,1385,1495,101,45,108,1405,291
+bukkit,29672,6574,7122,1186,632,899,7539,1729
+elasticsearch-master.csv,745077,100307,132062,757,1378,8457,114155,19921
+junit5-main.csv,1957,354,362,4,12,95,441,19
+libgdx-demo-superjumper-master.csv,1321,139,143,23,8,30,192,81
+metrics-core.csv,5784,976,1006,68,60,86,1297,326
+resolver-dns-native-macos.csv,210,25,29,3,0,4,39,13
+retrofit-master.csv,22487,3430,21634,222,244,334,2537,716
+org.eclipse.jdt.core.csv,364278,183365,236053,3507,1503,4116,137057,11445
+org.eclipse.pde.ui.csv,120787,20052,27475,941,603,1853,18153,4252
+org.eclipse.osgi.csv,52540,9758,15586,478,258,737,9519,1915
+core.csv,43774,7551,8285,1089,476,1068,8127,2391
+orm.csv,13456,2579,3068,206,81,195,2668,435
+jabref-master.csv,111669,15352,20903,1879,659,2314,18349,5734
+pmd-core.csv,37547,6294,7327,808,347,710,7483,1812
