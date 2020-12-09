@@ -2,6 +2,7 @@ package main;
 
 import java.util.Arrays;
 import weka.clusterers.ClusterEvaluation;
+import weka.clusterers.EM;
 import weka.clusterers.SimpleKMeans;
 import weka.core.*;
 import weka.core.converters.ConverterUtils.DataSource;
@@ -9,7 +10,7 @@ import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
 
 public class Predict {
-	private SimpleKMeans model;
+	private EM model;
 	
 	  public Predict() {
 		  train();
@@ -29,7 +30,7 @@ public class Predict {
 		        remove.setInputFormat(dt);                          // inform filter about dataset **AFTER** setting options
 		        Instances newData = Filter.useFilter(dt, remove);   // apply filter		        
 		        
-		        model = new SimpleKMeans();
+		        model = new EM();
 		        model.setNumClusters(3);
 		        model.buildClusterer(newData);
 		        System.out.println(model);
