@@ -3,8 +3,9 @@ package main;
 public class MainClass {
 
 	public static void main(String[] args) {
-		new TrainDataCreation("karate-core");
-		//new TestDataCreation("org.eclipse.jdt.core");
-		//new Predict();
+		//new TrainDataCreation("karate-core");
+		//new TestDataCreation("karate-core");
+		//new TrainModel();
+		new CreateXMLFile();
     }
 }
