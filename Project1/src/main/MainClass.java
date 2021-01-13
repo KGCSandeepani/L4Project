@@ -6,6 +6,7 @@ public class MainClass {
 		//new TrainDataCreation("karate-core");
 		//new TestDataCreation("karate-core");
 		//new TrainModel();
-		new CreateXMLFile();
+		//new CreateXMLFile();
+		new CreateJSONFile();
     }
 }
