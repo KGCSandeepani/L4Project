@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class CreateJSONFileClassLevel {
@@ -17,12 +18,12 @@ public class CreateJSONFileClassLevel {
 	private static String[] rl;
 	private List<String> packageName;
 	private List<String> className;
+	FileWriter file;
 	
 	public CreateJSONFileClassLevel() {
 		output = new PredictClassLevel().results;
 		rl = new String[output.length];
 		Analysis();
-		System.out.println(Arrays.toString(rl));
 		DataRead();
 		Create();
 	}
@@ -44,21 +45,52 @@ public class CreateJSONFileClassLevel {
 	
 	private void Create() {
 		
+		JSONObject obj = new JSONObject();
+ 
+        JSONArray classes = new JSONArray();
+
+        for (int i = 0; i < output.length; i++) {
+			JSONObject ob = new JSONObject();
+			ob.put("package", packageName.get(i));
+			ob.put("class", className.get(i));
+			ob.put("reusabilityLevel", rl[i]);
 			
-			try (FileWriter file = new FileWriter(jsonFilePathClassLevel)) {
-				for (int i = 0; i < output.length; i++) {
-					JSONObject obj = new JSONObject();
-					obj.put("package", packageName.get(i));
-					obj.put("class", className.get(i));
-					obj.put("reusabilityLevel", rl[i]);
-					
-					file.write(obj.toJSONString());
-					file.flush();
-				}
-			}
-			catch (IOException e) {
-				e.printStackTrace();
-			}
+			classes.add(ob);
+		}
+        obj.put("Classes", classes);
+        
+        try {
+        	file = new FileWriter(jsonFilePathClassLevel);
+            file.write(obj.toJSONString());
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+ 
+        } finally {
+ 
+            try {
+                file.flush();
+                file.close();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        
+//		try (FileWriter file = new FileWriter(jsonFilePathClassLevel)) {
+//			for (int i = 0; i < output.length; i++) {
+//				JSONObject obj = new JSONObject();
+//				obj.put("package", packageName.get(i));
+//				obj.put("class", className.get(i));
+//				obj.put("reusabilityLevel", rl[i]);
+//				
+//				file.write(obj.toJSONString());
+//				file.flush();
+//			}
+//		}
+//		catch (IOException e) {
+//			e.printStackTrace();
+//		}
 		
 			
 	}
@@ -77,8 +109,7 @@ public class CreateJSONFileClassLevel {
             br = new BufferedReader(new FileReader(csvFile));
             line = br.readLine();
             while ((line = br.readLine()) != null) {              
-                Object[] data = line.split(cvsSplitBy);
-                System.out.println("1 :" + data[0] + " , 2 :" + data[1] );  
+                Object[] data = line.split(cvsSplitBy);            
                 packageName.add((String)data[0]);
                 className.add((String)data[1]);                          
             }
