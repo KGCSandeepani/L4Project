@@ -14,6 +14,9 @@ public class MainClass {
 			
 		//new TrainModelClassLevel();
 		//new PredictClassLevel();
-		new CreateJSONFileClassLevel();
+		//new CreateJSONFileClassLevel();
+		//new Integration();
+		
+		new ReuabilityFrame().setVisible(true);
     }
 }

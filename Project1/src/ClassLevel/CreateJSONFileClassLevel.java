@@ -30,11 +30,11 @@ public class CreateJSONFileClassLevel {
 	
 	private static void Analysis() {
 		for (int i = 0; i < output.length; i++) {
-			if(output[i]==1) {
+			if(output[i]==2) {
 				rl[i]="Medium";
-			}else if(output[i]==2) {
-				rl[i]="Low";
 			}else if(output[i]==0) {
+				rl[i]="Low";
+			}else if(output[i]==1) {
 				rl[i]="High";
 			}else {
 				rl[i]="Null";
@@ -45,7 +45,7 @@ public class CreateJSONFileClassLevel {
 	
 	private void Create() {
 		
-		JSONObject obj = new JSONObject();
+		//JSONObject obj = new JSONObject();
  
         JSONArray classes = new JSONArray();
 
@@ -57,11 +57,11 @@ public class CreateJSONFileClassLevel {
 			
 			classes.add(ob);
 		}
-        obj.put("Classes", classes);
+        //obj.put("Classes", classes);
         
         try {
         	file = new FileWriter(jsonFilePathClassLevel);
-            file.write(obj.toJSONString());
+            file.write(classes.toJSONString());
  
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,4 +1,4 @@
-package main;
+package ProjectLevel;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,22 +11,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class TrainDataCreation{
-	private static final File trainDataFile = new File("trainDataset.csv");	
+public class TestDataCreation{
+	private static final File testDataFile = new File("testData.csv");	
 	private String fileName;
 	private String metric[]= {"Lines of Code","Cyclomatic Complexity","Weight Methods per Class","Depth of Inheritance Tree",
     		"Number of Children","Coupling between Objects","Response for Class","Lack of Cohesion of Methods"};
 	private List<String> firstRowList;
 	private List<Object> secondRowList;
 	
-	public TrainDataCreation(String fname) {
+	public TestDataCreation(String fname) {
 		fileName = fname+".csv";
-		trainDataRead();
-		trainDataWrite();
+		testDataRead();
+		testDataWrite();
 	}
 		
 	
-	private void trainDataRead() {
+	private void testDataRead() {
 		
         String csvFile = "C:\\Users\\Chamodi Sandeepani\\Desktop\\"+fileName;
         BufferedReader br = null;
@@ -63,22 +63,22 @@ public class TrainDataCreation{
         }
     }
 	
-	private void trainDataWrite() {
+	private void testDataWrite() {
 		BufferedWriter bufferedWriter = null;
         FileWriter csvWriter = null;
 		try {
-			csvWriter = new FileWriter(trainDataFile,true);  
+			csvWriter = new FileWriter(testDataFile);  
             bufferedWriter=new BufferedWriter(csvWriter);
             
-        	if (trainDataFile.length() == 0) {
-        		bufferedWriter.write("Project,");
+        	if (testDataFile.length() == 0) {
+//        		bufferedWriter.write("Project,");
         		for (int i=0;i<firstRowList.size()-1;i++) {
         			bufferedWriter.append(firstRowList.get(i)+",");           	
             	}
         		bufferedWriter.append(firstRowList.get(firstRowList.size()-1)+"\n");           	
             	
             }
-        	bufferedWriter.append(fileName+",");
+//        	bufferedWriter.append(fileName+",");
         	for (int i=0;i<secondRowList.size()-1;i++) {
         		bufferedWriter.append(secondRowList.get(i)+",");           	
         	}

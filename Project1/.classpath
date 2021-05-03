@@ -8,5 +8,7 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Program Files/Weka-3-8-4/weka.jar"/>
 	<classpathentry kind="lib" path="C:/JSON/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="D:/Level 4 Semester 1 My/Project/Tools for data/com.fasterxml.jackson.databind.jar"/>
+	<classpathentry kind="lib" path="D:/Level 4 Semester 1 My/Project/Tools for data/org.json.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
